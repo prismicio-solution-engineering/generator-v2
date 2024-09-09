@@ -1,0 +1,92 @@
+
+This is the format of prismic slices model.json
+
+Description of a slice model
+
+id: A unique identifier for the slice in snake_case.
+type: Specifies the slice type as "SharedSlice".
+name: The name of the slice in PascalCase.
+description: A description of the slice.
+variations: An array containing the variations of the slice. Each variation has:
+id: A unique identifier for the variation.
+name: The name of the variation.
+description: A description of the variation.
+primary: An object containing non-repeatable fields, each with: type: The field type (e.g., "Text", "StructuredText", "Link", "Image", "Select", "Boolean", "Embed", "Number"). config: An object with properties specific to the field type like label, placeholder, select, allowTargetBlank, thumbnails, constraint, default_value.
+items: An object containing repeatable fields, structured similarly to primary.
+docURL: this string "..."
+version: this string "initial"
+imageUrl: an empty string ""
+
+List of fields in primary or items
+
+Text: type: "Text"config:label: Label for the field.placeholder: Placeholder text.
+StructuredText: type: "StructuredText"config:label: Label for the field.placeholder: Placeholder text.single: Restricts to a single block type (e.g., "heading1", "heading2", "heading3", "heading4", "heading5", "heading6", "paragraph", "preformatted", "strong", "em", "list-item", "o-list-item", "group-list-item", "group-o-list-item", "image", "embed", "hyperlink").multi: Allows multiple block types (e.g., "heading1", "heading2", "heading3", "heading4", "heading5", "heading6", "paragraph", "preformatted", "strong", "em", "list-item", "o-list-item", "group-list-item", "group-o-list-item", "image", "embed", "hyperlink").
+Link: type: "Link"config:label: Label for the field.placeholder: Placeholder text.select: Specifies the link type (e.g., "web", "document", "media").
+Image: type: "Image"config:label: Label for the field.constraint: Specifies size constraints (e.g., {"width": 500, "height": 500}).thumbnails: [], should be an empty array.
+Select: type: "Select"config:label: Label for the field.placeholder: Placeholder text.options: Array of options (e.g., ["Option 1", "Option 2"]).
+Boolean: type: "Boolean"config:label: Label for the field.default_value: Default value (true/false).
+Embed: type: "Embed"config:label: Label for the field.placeholder: Placeholder text.
+Number: type: "Number"config:label: Label for the field.placeholder: Placeholder text.
+
+All the fields at the root and in the variation object are required.
+Group fields cannot be used.
+The model.json format of the primary and items properties are the same.
+You can have one repeatable zone per slice, just add fields that can be repeated in the items object.
+The select field is only relevant if options don't need to be dynamic.
+For links, make sure to always add two fields, a link field and a link_label field so that the link can be correctly displayed.
+
+Here is an example model.json
+{
+  "id": "feature_section",
+  "type": "SharedSlice",
+  "name": "FeatureSection",
+  "description": "A section highlighting features with icons and texts.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default Variation",
+      "description": "Default variation with icons and feature texts",
+      "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "Header"
+          }
+        },
+        "subheader": {
+          "type": "Text",
+          "config": {
+            "label": "Subheader"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": { "label": "Button Link", "placeholder": "", "select": null }
+        }
+      },
+      "items": {
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "Icon"
+          }
+        },
+        "feature_text": {
+          "type": "Text",
+          "config": {
+            "label": "Feature Text"
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Create a fully designed website section in React with Tailwind.
+You will be provided with the description of a website, its brand guidelines, and the website section definition.
+Respect these formatting guidelines:

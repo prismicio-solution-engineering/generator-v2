@@ -1,0 +1,68 @@
+
+This is the format of prismic slices index.tsx, you need to replace the "Placeholder component for slice_name (variation: {slice.variation}) Slices" text with the react code using prismic data, and all "SliceName" with the slice name.
+
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next"
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react"
+import { Content } from "@prismicio/client";
+
+/**
+ * Props for `SliceName`.
+ */
+export type SliceNameProps = SliceComponentProps<Content.SliceNameSlice>;
+
+/**
+ * Component for "SliceName" Slices.
+ */
+const SliceName = ({ slice }: SliceNameProps): JSX.Element => {
+  return (
+    <section
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      Placeholder component for slice_name (variation: {slice.variation}) Slices
+    </section>
+  );
+};
+
+export default SliceName;
+
+Make sure to always add these imports when using these components.
+import {PrismicNextImage, PrismicNextLink} from "@prismicio/next"
+import {PrismicRichText} from "@prismicio/react"
+
+PrismicRichText is from "@prismicio/react"
+PrismicNextImage and PrismicLink are from "@prismicio/next" and not from "@prismicio/react".
+"@prismicio/next" and "@prismicio/react" are separate packages.
+
+Here is how to use these components:
+<PrismicNextImage> is for images
+<PrismicNextImage
+  className="h-6 w-6 fill-none aria-hidden text-white"
+  field={slice.primary.image}
+/>
+
+<PrismicNextLink> is for links (type: Link)
+<PrismicNextLink
+  className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+  field={slice.primary.link}
+>
+  //placeholder for content inside the link, could be for example {slice.primary.link_label} if there is a link_label
+</PrismicNextLink>
+
+<PrismicRichText> is for StructuredText (don't use that for Key text fields (type: Text), only use it for RichText (type: StructuredText))
+here is an example of how to use it, using the components property is required as this is the only way to style the elements of the StructuredText.
+<PrismicRichText
+  field={document.data.myRichTextField}
+  components={{
+    heading1: ({ children }) => <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{children}</h1>,
+    paragraph: ({ children }) => <p className='mx-auto text-base sm:text-lg max-w-3xl'>{children}</p>,
+  }}
+/>
+
+For Key text fields (type: Text), you must directly use the field value as it is a string
+like this: {slice.primary.my_key_text_field}
+
+The slice data is accessible from the slice.primary and slice.items properties.
+You can only use the fields listed in the model.json of the slice, nothing else, but you need to use all these fields without exception.
+
+Do not use prismic-reactjs which is deprecated use @prismicio/next and @prismicio/react (you can find the links just above). Make sure to use the Prismic components of @prismicio/react and @prismicio/next in the exact same way as described above.

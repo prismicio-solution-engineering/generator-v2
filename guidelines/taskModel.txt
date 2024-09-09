@@ -1,0 +1,3 @@
+Create the model.json of a prismic slice.
+You will be provided with the React component associated to that slice.
+Respect these formatting guidelines:

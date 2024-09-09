@@ -1,0 +1,2 @@
+In following messages you will be given instructions to edit the component.
+Only apply the changes asked in the instructions, only edit the code when needed to apply the given instructions.

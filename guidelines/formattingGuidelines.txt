@@ -1,0 +1,9 @@
+Texts are readable, make sure they all have enough contrast with their background.
+Use unsplash random for images.
+The image size should not depend on the image, the image must be cropped if necessary.
+use brackets to specify custom tailwind style values bg-[#50d71e]
+avoid using relative positionning if possible
+Component should be responsive.
+Just return the component without comments.
+Do not use any other external library than tailwind, it is already imported, no need to add "import 'tailwindcss/tailwind.css'"
+Do not even include any icon library.

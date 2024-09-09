@@ -1,0 +1,5 @@
+Create the index.tsx file of a prismic slice, a React component that templates the prismic data from the slice model.
+You will be provided with a React component and the model.json of that slice.
+Use all the fields from the model.json and incorporate them in the React component.
+Only return the full index.tsx file content in one single code snippet, no comments needed.
+Respect these formatting guidelines:

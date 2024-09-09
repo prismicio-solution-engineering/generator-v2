@@ -1,0 +1,68 @@
+Website Description:
+Documentation website of Klarna, Klarna offers better shopping with direct payments, pay later options, and installment plans in a smoooth one-click purchase experience.
+
+Brand Guidelines:
+Typography guidelines for elements in JSON format
+{
+  "h1": {
+    "primary": [
+      {
+        "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Arial, sans-serif"
+      }
+    ]
+  },
+  "p": {
+    "primary": [
+      {
+        "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Arial, sans-serif"
+      }
+    ]
+  },
+  "a": {
+    "primary": [
+      {
+        "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Arial, sans-serif"
+      }
+    ]
+  }
+}
+colors guidelines
+{
+  "background": {
+    "primary": [
+      "rgba(0, 0, 0, 0)"
+    ],
+    "secondary": [
+      "rgb(255, 255, 255)"
+    ]
+  },
+  "text": {
+    "primary": [
+      "rgb(23, 23, 23)"
+    ],
+    "secondary": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(72, 123, 148)",
+      "rgb(65, 113, 138)"
+    ]
+  },
+  "border": {
+    "primary": [],
+    "secondary": [
+      "rgb(0, 0, 0) rgb(0, 0, 0) rgb(240, 238, 235)",
+      "rgb(0, 0, 0)"
+    ]
+  }
+}
+Spacing: 160px,128px,96px,88px,80px,64px,56px,48px,40px,32px,24px,16px,12px,8px
+Desktop Layout Grid: Screen size 1440px, 12 cols, Gutter 24px, Margin 84px
+Mobile Layout Grid: Screen size 390px, 6 cols, Gutter 24px, Margin 24px
+Border Radius: 16px on frames, 8px on buttons
+Drop Shadow: Minimal to none, maintaining a clean and flat design aesthetic.
+Padding: Consistent padding is crucial. The top and bottom of sections should have balanced padding.
+Alignment: Titles are centered, Texts and buttons are typically left-aligned on the page and within sections
+Buttons: They should be styled for visibility and consistency with the brand colors.
+Distribution: Elements should be evenly distributed across the width of the section for a harmonious and balanced layout.
+Dropdowns: Ensure dropdown buttons have a clearly visible default value for better user experience and accessibility.
+
